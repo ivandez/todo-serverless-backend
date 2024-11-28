@@ -1,7 +1,7 @@
 # "org" ensures this Service is used with the correct Serverless Framework Access Key.
 org: personalivandez
 # "service" is the name of this project. This will also be added to your AWS resource names.
-service: test
+service: todo-serverless
 
 provider:
   name: aws
@@ -12,8 +12,8 @@ plugins:
 
 functions:
   hello:
-    handler: handler.hello
+    handler: src/todo/infrastructure/handler.getTodos
     events:
       - httpApi:
-          path: /
+          path: /my-todos
           method: get
